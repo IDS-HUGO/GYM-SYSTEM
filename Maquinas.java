@@ -1,3 +1,3 @@
-public class Maquinas {
-    
+public class Maquinas extends Aparatos {
+    private String tipo;
 }
