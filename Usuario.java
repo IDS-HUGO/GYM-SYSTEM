@@ -10,6 +10,7 @@ public class Usuario {
     public static void main(String[] args) {
         iniciarSesion();
     }
+    
     public static void iniciarSesion() {
 
         String usuario;
@@ -23,11 +24,12 @@ public class Usuario {
             contraseña = leer.nextLine();
 
             if (usuario.equals(usuarioGerente) && contraseña.equals(contraseñaGerente)) {
-                Gerente ob1 = new Gerente();
-                ob1.agregarCliente();
+                Cliente cliente = new Cliente();
+                Gerente ob1 = new Gerente(cliente);
+                ob1.verMenu();
             } else if (usuario.equals(usuarioAdministrador) && contraseña.equals(contraseñaAdministrador)) {
                 Administrador ob1 = new Administrador();
-                ob1.verCliente();
+                ob1.verMenu();
             } else {
                 System.out.println("Usuario o contraseña incorrectos. Inténtelo de nuevo.");
             }

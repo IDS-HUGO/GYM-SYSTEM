@@ -1,7 +1,7 @@
 import java.util.Scanner;
 public class Administrador {
 
-    public void verCliente(){
+    public void verMenu(){
         Scanner leer =new Scanner(System.in);
         int opcion;
         do{
