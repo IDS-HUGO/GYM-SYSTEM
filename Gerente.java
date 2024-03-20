@@ -2,7 +2,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 public class Gerente {
     private Cliente cliente;
-    private Plan plan;
     public Gerente(Cliente cliente) {
         this.cliente = cliente;
     }
