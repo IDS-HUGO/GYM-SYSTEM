@@ -30,7 +30,8 @@ public class Gerente {
                     eliminarCliente();
                     break;
                 case 5:
-                    agregarInventario();
+                    Aparatos ob1 = new Aparatos();
+                    ob1.agregarInventario();
                     break;
                 case 6:
                     editarInventario();
@@ -98,20 +99,24 @@ public class Gerente {
         busqueda = leer.nextInt();
         ArrayList<Cliente> listaClientes = cliente.getListaClientes();
         ArrayList<Plan> listaPlanesCliente = cliente.getPlanCliente();
+        if(!cliente.getListaClientes().equals(null)){ 
         for (int i = 0; i<listaClientes.size();i++){
             Cliente nuevoCliente = listaClientes.get(i);
             Plan planCliente = listaPlanesCliente.get(i);
             if(busqueda == nuevoCliente.getId()){
-                System.out.println("CLIENTE ENCONTRADO:");
-                System.out.println("NOMBRE :" + nuevoCliente.getNombre());
-                System.out.println("ID: " + nuevoCliente.getId());
-                System.out.println("TIPO DE PLAN:" + planCliente.getPlan());
-                System.out.println("MONTO PAGADO :" + planCliente.getMonto());
-                System.out.println("FECHA INICIAL DE PLAN: " + planCliente.getFechaInicio());
-                System.out.println("FECHA FINAL DE PLAN" + planCliente.getFechaFin());
+                    System.out.println("CLIENTE ENCONTRADO:");
+                    System.out.println("NOMBRE :" + nuevoCliente.getNombre());
+                    System.out.println("ID: " + nuevoCliente.getId());
+                    System.out.println("TIPO DE PLAN:" + planCliente.getPlan());
+                    System.out.println("MONTO PAGADO :" + planCliente.getMonto());
+                    System.out.println("FECHA INICIAL DE PLAN: " + planCliente.getFechaInicio());
+                    System.out.println("FECHA FINAL DE PLAN" + planCliente.getFechaFin());
             }
         }
-        System.out.println("CLIENTE NO ENCONTRADO");
+        }else{  
+            System.out.println("CLIENTE NO ENCONTRADO");
+            
+        }
         Gerente ob3 = new Gerente(cliente);
         ob3.verMenu();
     }
@@ -168,9 +173,11 @@ public class Gerente {
                         System.out.println("ERROR VUELVA A INTENTARLO");
                         break;
                 }
+            }else{
+                System.out.println("CLIENTE NO ENCONTRADO");
             }
         }
-        System.out.println("CLIENTE NO ENCONTRADO");
+        
         Gerente ob3 = new Gerente(cliente);
         ob3.verMenu();
 
@@ -180,10 +187,7 @@ public class Gerente {
         Gerente ob3 = new Gerente(cliente);
         ob3.verMenu();
     }
-    public void agregarInventario(){
-        Gerente ob3 = new Gerente(cliente);
-        ob3.verMenu();
-    }
+    
     public void buscarInventario(){
         Gerente ob3 = new Gerente(cliente);
         ob3.verMenu();
