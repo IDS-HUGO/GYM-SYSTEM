@@ -1,27 +1,17 @@
 import java.util.Scanner;
-public class Administrador {
+public class Administrador extends Usuario{
 
-    public void verMenu(){
-        Scanner leer =new Scanner(System.in);
-        int opcion;
-        do{
-        System.out.println("QUE DESEA REALIZAR:\n 1)VER CLIENTE 2)VER MENSUALIDAD 3)VER INVENTARIO");
-        opcion = leer.nextInt();
-        switch (opcion) {
-            case 1:
-                
-                break;
-            case 2:
-
-                break;
-            case 3:
-
-                break;
-            default:
-                System.out.println("INGRESE UN NUMERO CORRECTO");
-                break;
-        }
-        }while(opcion<0 || opcion>3);
-
+    public String getUser() {
+        return super.getUser();
     }
+    public String getPass() {
+        return super.getPass();
+    }
+
+    public Administrador(){
+        this.user = "Lizeth.egordillo";
+        this.pass = "Estrada@2024";
+    }
+
+    public void verMenu(){}
 }

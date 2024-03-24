@@ -1,41 +1,38 @@
 import java.util.Scanner;
+
 public class Usuario {
-    
-    protected static String usuarioGerente = "gerenteGym";
-    protected static String usuarioAdministrador = "administradorGym";
-    protected static String contraseñaGerente = "gerente123";
-    protected static String contraseñaAdministrador = "administrador123";
-    static Scanner leer =new Scanner(System.in);
 
-    public static void main(String[] args) {
-        iniciarSesion();
+    protected String user;
+    protected String pass;
+
+    public String getUser() {
+        return user;
+    }
+
+    public String getPass() {
+        return pass;
     }
     
-    public static void iniciarSesion() {
+    public void iniciarSesion(){
+        Scanner leer = new Scanner(System.in);
+        Gerente gerente = new Gerente();
+        Administrador admin = new Administrador();
 
-        String usuario;
-        String contraseña;
+        do{
 
-        do {
-            System.out.println("Ingrese su usuario");
-            usuario = leer.nextLine();
+            
+        System.out.println("--- Bienvenido ---");
+        System.out.print("Ingrese su usuario: ");
+        this.user = leer.nextLine();
+        System.out.print("Ingrese su contraseña: ");
+        this.pass = leer.nextLine();
 
-            System.out.println("Ingrese su contraseña");
-            contraseña = leer.nextLine();
+        
 
-            if (usuario.equals(usuarioGerente) && contraseña.equals(contraseñaGerente)) {
-                Cliente cliente = new Cliente();
-                Gerente ob1 = new Gerente(cliente);
-                ob1.verMenu();
-            } else if (usuario.equals(usuarioAdministrador) && contraseña.equals(contraseñaAdministrador)) {
-                Administrador ob1 = new Administrador();
-                ob1.verMenu();
-            } else {
-                System.out.println("Usuario o contraseña incorrectos. Inténtelo de nuevo.");
-            }
+        }while(count != 3);
+        
 
-        } while (!(usuario.equals(usuarioGerente) && contraseña.equals(contraseñaGerente)) &&
-                 !(usuario.equals(usuarioAdministrador) && contraseña.equals(contraseñaAdministrador)));
     }
+
 
 }
