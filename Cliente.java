@@ -31,8 +31,8 @@ public class Cliente {
         return planCliente;
     }
 
-    public void planCliente(Plan planCliente2) {
-        planCliente.add(planCliente2);
+    public void planCliente(Plan plan) {
+        planCliente.add(plan);
     }
 
     public void listaClientes(Cliente cliente) {

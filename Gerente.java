@@ -1,5 +1,6 @@
-public class Gerente extends Usuario{
+import java.util.Scanner;
 
+public class Gerente extends Usuario{
     private String rol = "Gerente";
 
     public String getUser() {
@@ -20,8 +21,12 @@ public class Gerente extends Usuario{
 
     
     public void verMenu() {
-            System.out.println("BUEN DIA "+this.user+" QUE DESEA REALIZAR: ");
-            System.out.println(
+        Scanner leer = new Scanner(System.in);
+        int opc;
+
+        do {
+        System.out.println("BUEN DIA "+this.user+" QUE DESEA REALIZAR: ");
+        System.out.println(
             "1.- Agregar Clientes\n"+
             "2.- Ver datos del Cliente\n"+
             "3.- Editar Cliente\n"+
@@ -31,7 +36,14 @@ public class Gerente extends Usuario{
             "7.- Eliminar Inventario\n"+
             "8.- Buscar maquina de inventario\n"+
             "9.- Ver clientes\n"+
-            "10.- Ver inventario");
+            "10.-Ver inventario\n"+
+            "11.-Cerrar sesion");
+            opc = leer.nextInt();
+            while (opc <=0 || opc > 11) {
+                System.out.println("Seleccione una opcion dentro del rango");
+                opc = leer.nextInt();
+            }
+        } while (opc != 11);
     }
 
     public void agregarNuevoCliente() {}
@@ -50,8 +62,10 @@ public class Gerente extends Usuario{
 
     public void editarInventario(){}
 
-    public void mostrarClientes(){
-        
+    public void mostrarClientes(){}
+
+    public void cerrarSesion(){
+        System.out.println("Vuelva pronto :)\nSaliendo...");
     }
 
 }
