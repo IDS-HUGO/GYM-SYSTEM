@@ -31,7 +31,7 @@ public class Usuario {
 
             System.out.println("--- Bienvenido ---");
             System.out.println("Intentos: "+count);
-            System.out.println("escriba su Rol: \nGerente / Admin");
+            System.out.println("Escriba su Rol: \nGerente / Admin");
             rol = leer.nextLine();
             System.out.print("Ingrese su usuario: ");
             this.user = leer.nextLine();

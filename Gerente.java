@@ -25,7 +25,7 @@ public class Gerente extends Usuario{
         int opc;
 
         do {
-        System.out.println("BUEN DIA "+this.user+" QUE DESEA REALIZAR: ");
+        System.out.println("\nBUEN DIA "+this.user+" QUE DESEA REALIZAR: ");
         System.out.println(
             "1.- Agregar Clientes\n"+
             "2.- Ver datos del Cliente\n"+
@@ -43,10 +43,38 @@ public class Gerente extends Usuario{
                 System.out.println("Seleccione una opcion dentro del rango");
                 opc = leer.nextInt();
             }
+
+            switch (opc) {
+                case 1: agregarNuevoCliente(); 
+                    break;
+                case 2: buscarCliente();
+                    break;
+                case 3: actualizarCliente();
+                    break;
+                case 4: eliminarCliente();
+                    break;
+                case 5: 
+                    break;
+                case 6: editarInventario();
+                    break;
+                case 7: eliminarInventario();
+                    break;
+                case 8: buscarInventario();
+                    break;
+                case 9: mostrarClientes();
+                    break;
+                case 10: 
+                    break;
+                case 11: cerrarSesion();
+                    break;
+            }
+
         } while (opc != 11);
     }
 
-    public void agregarNuevoCliente() {}
+    public void agregarNuevoCliente() {
+        
+    }
 
     public void buscarCliente() {}
 
