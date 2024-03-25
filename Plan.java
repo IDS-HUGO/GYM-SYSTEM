@@ -4,12 +4,7 @@ public class Plan{
     private String fechaFin;
     private String plan;
     
-    public Plan(int monto,String plan,String fechaInicio,String fechaFin){
-        this.plan = plan;
-        this.monto = monto;
-        this.fechaInicio = fechaInicio;
-        this.fechaFin = fechaFin;
-    }
+    public Plan(){}
 
     public void setMonto(int monto) {
         this.monto = monto;
